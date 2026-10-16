@@ -1,0 +1,10 @@
+# Raspberry Pi 5, 64-bit OS, Python 3.13 (Trixie).
+# Do not install this file on Windows.
+#
+# PyQt5, QtSvg, matplotlib, gpiozero, and lgpio come from apt (see setup.sh).
+# Python 3.13 needs NumPy 2.1 or newer. NumPy 1.26 conflicts with TensorFlow and OpenCV.
+
+tensorflow
+numpy>=2.1.0
+reportlab>=4.0.0
+openpyxl>=3.1.0

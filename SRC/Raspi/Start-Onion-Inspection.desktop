@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Start Onion AI Inspection
+Comment=Open the onion inspection application
+Exec=bash -c 'F="%k"; F="${F#file://}"; D="$(dirname "$F")"; exec bash "$D/run.sh"'
+Path=
+Terminal=true
+Categories=Utility;
+StartupNotify=true
