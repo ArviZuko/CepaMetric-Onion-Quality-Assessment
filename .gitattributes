@@ -1,0 +1,5 @@
+SRC/Models/convnexttiny/convnexttiny_model.weights[[:space:]](1).h5 filter=lfs diff=lfs merge=lfs -text
+SRC/Models/Resnet/resnet_model.weights.h5 filter=lfs diff=lfs merge=lfs -text
+SRC/Models/Exception/xception_model.weights.h5 filter=lfs diff=lfs merge=lfs -text
+SRC/Windows/Installer/OnionAIInspectionSetup.exe filter=lfs diff=lfs merge=lfs -text
+Documentation/Video.mp4 filter=lfs diff=lfs merge=lfs -text

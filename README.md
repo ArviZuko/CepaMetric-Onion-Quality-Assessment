@@ -38,17 +38,17 @@ cepametric/
 │   └── labels.csv             image and class metadata
 ├── SRC/
 │   ├── Models/
-│   │   ├── convnexttiny/      checkpoint in Release
+│   │   ├── convnexttiny/      checkpoint in Git LFS
 │   │   ├── densenet121/      checkpoint in Git
 │   │   ├── effnetv2/         checkpoint in Git
-│   │   ├── Exception/        Xception checkpoint in Release
-│   │   └── Resnet/           ResNet checkpoint in Release
+│   │   ├── Exception/        Xception checkpoint in Git LFS
+│   │   └── Resnet/           ResNet checkpoint in Git LFS
 │   ├── Raspi/                Raspberry Pi application and setup scripts
 │   └── Windows/
 │       ├── Src/              Windows PyQt application source
 │       ├── Application/      Inno Setup project
-│       └── Installer/        installer download guide
-├── Documentation/           report, slides, and video download guide
+│       └── Installer/        installer executable (Git LFS)
+├── Documentation/           report, slides, and video (Git LFS)
 └── Screenshots/              supplied interface and prototype images
 ```
 
@@ -70,32 +70,31 @@ The image folder uses **`molded`** while the application displays **Moldy**. `la
 
 | Model family | Supplied location | Delivery |
 | --- | --- | --- |
-| ConvNeXt Tiny | `SRC/Models/convnexttiny/` | [Release download guide](SRC/Models/convnexttiny/README.md) |
+| ConvNeXt Tiny | `SRC/Models/convnexttiny/` | [Weight in Git LFS](SRC/Models/convnexttiny/convnexttiny_model.weights%20%281%29.h5) |
 | EfficientNetV2-B0 | `SRC/Models/effnetv2/` | [Weight in Git](SRC/Models/effnetv2/effnetv2b0model.weights.h5) |
 | DenseNet121 | `SRC/Models/densenet121/` | [Weight in Git](SRC/Models/densenet121/onion_densenet121_best_macro_f1.weights.h5) |
-| ResNet | `SRC/Models/Resnet/` | [Release download guide](SRC/Models/Resnet/README.md) |
-| Xception | `SRC/Models/Exception/` | [Release download guide](SRC/Models/Exception/README.md) |
+| ResNet | `SRC/Models/Resnet/` | [Weight in Git LFS](SRC/Models/Resnet/resnet_model.weights.h5) |
+| Xception | `SRC/Models/Exception/` | [Weight in Git LFS](SRC/Models/Exception/xception_model.weights.h5) |
 
 The report calls the ResNet architecture **ResNet50V2**. The application code defines model builders and loads weights, but this repository does **not** contain the `onion_stacking_meta_classifier_best.keras` file referenced by the stacking option. Ensemble averaging has no separate checkpoint.
 
-## Restoring large files
+## Large files with Git LFS
 
-Five files exceeded GitHub's per-file Git limit. Download them from the [v1.0 large-files Release](https://github.com/ArviZuko/cepametric/releases/tag/v1.0-large-files). Each independent ZIP stores the original path and filename; **extract it at the repository root**.
+The installer, ConvNeXt Tiny/ResNet/Xception weights, and demonstration video are stored directly in their original folders using Git LFS.
 
-| File | Folder guide |
-| --- | --- |
-| Windows installer | [`SRC/Windows/Installer/README.md`](SRC/Windows/Installer/README.md) |
-| ConvNeXt Tiny weights | [`SRC/Models/convnexttiny/README.md`](SRC/Models/convnexttiny/README.md) |
-| ResNet weights | [`SRC/Models/Resnet/README.md`](SRC/Models/Resnet/README.md) |
-| Xception weights | [`SRC/Models/Exception/README.md`](SRC/Models/Exception/README.md) |
-| Demonstration video | [`Documentation/README.md`](Documentation/README.md) |
+```bash
+git lfs install
+git clone https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment.git
+cd CepaMetric-Onion-Quality-Assessment
+git lfs pull
+```
 
 ## Application entry points and setup
 
-- **Windows:** [`SRC/Windows/Src/app.py`](SRC/Windows/Src/app.py) is the Python source. An [Inno Setup definition](SRC/Windows/Application/OnionAIInspection.iss) and the [supplied installer](SRC/Windows/Installer/README.md) are also available. The code imports TensorFlow/Keras, PyQt5, OpenCV, NumPy, Matplotlib, and `pyrealsense2`; a Windows dependency lockfile is not supplied.
+- **Windows:** [`SRC/Windows/Src/app.py`](SRC/Windows/Src/app.py) is the Python source. An [Inno Setup definition](SRC/Windows/Application/OnionAIInspection.iss) and the [supplied installer](SRC/Windows/Installer/OnionAIInspectionSetup.exe) are also available. The code imports TensorFlow/Keras, PyQt5, OpenCV, NumPy, Matplotlib, and `pyrealsense2`; a Windows dependency lockfile is not supplied.
 - **Raspberry Pi:** [`SRC/Raspi/final.py`](SRC/Raspi/final.py) is the application source. Start with [`setup.sh`](SRC/Raspi/setup.sh), [`requirements-pi.txt`](SRC/Raspi/requirements-pi.txt), and [`run.sh`](SRC/Raspi/run.sh). The supplied setup script targets a **64-bit Raspberry Pi 5** and installs system packages as well as Python dependencies. Review the script before running it on your device.
 
-**Fresh-clone limitation:** The Windows source looks for model weights under a root-level `Training_DL_Models/Model_*/weights/` tree, whereas the supplied files are organized under `SRC/Models/`. The Raspberry Pi source also expects a separate `Weight Files/` directory beside `final.py`. Those paths must be reconciled for source execution. Both application sources reference a stacking checkpoint and external reflectance/reference assets that are absent from the supplied folder. Restoring the five Release ZIPs recreates the supplied folder, but does not create those missing assets. The installer was uploaded as provided and has not been independently tested on a clean machine.
+**Fresh-clone limitation:** The Windows source looks for model weights under a root-level `Training_DL_Models/Model_*/weights/` tree, whereas the supplied files are organized under `SRC/Models/`. The Raspberry Pi source also expects a separate `Weight Files/` directory beside `final.py`. Those paths must be reconciled for source execution. Both application sources reference a stacking checkpoint and external reflectance/reference assets that are absent from the supplied folder. Git LFS restores the supplied large files, but does not create those missing assets. The installer was uploaded as provided and has not been independently tested on a clean machine.
 
 ## Reported results and current limits
 
@@ -107,7 +106,7 @@ RealSense sizing depends on calibration and scene geometry; model results depend
 
 - [Onion AI Inspection System project report](Documentation/Onion_AI_Inspection_System_Project_Report.docx)
 - [CepaMetric project presentation](Documentation/CepaMetric_GitHub_Project_15_Slides.pptx)
-- [Demonstration video download](Documentation/README.md)
+- [Demonstration video](Documentation/Video.mp4)
 - [Project screenshots](Screenshots/)
 
 No project-level license was included in the supplied folder. Verify rights to the source, dataset, weights, report, and installer before reuse or redistribution.
