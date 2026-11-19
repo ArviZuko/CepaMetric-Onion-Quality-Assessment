@@ -72,11 +72,11 @@ The image folder uses **`molded`** while the application displays **Moldy**. `la
 
 | Model family | Supplied location | Delivery |
 | --- | --- | --- |
-| ConvNeXt Tiny | `SRC/Models/convnexttiny/` | [Weight in Git LFS](SRC/Models/convnexttiny/convnexttiny_model.weights%20%281%29.h5) |
+| ConvNeXt Tiny | `SRC/Models/convnexttiny/` | [Weight in Git LFS](https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/convnexttiny_model.weights.1.h5) |
 | EfficientNetV2-B0 | `SRC/Models/effnetv2/` | [Weight in Git](SRC/Models/effnetv2/effnetv2b0model.weights.h5) |
 | DenseNet121 | `SRC/Models/densenet121/` | [Weight in Git](SRC/Models/densenet121/onion_densenet121_best_macro_f1.weights.h5) |
-| ResNet | `SRC/Models/Resnet/` | [Weight in Git LFS](SRC/Models/Resnet/resnet_model.weights.h5) |
-| Xception | `SRC/Models/Exception/` | [Weight in Git LFS](SRC/Models/Exception/xception_model.weights.h5) |
+| ResNet | `SRC/Models/Resnet/` | [Weight in Git LFS](https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/resnet_model.weights.h5) |
+| Xception | `SRC/Models/Exception/` | [Weight in Git LFS](https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/xception_model.weights.h5) |
 
 The report calls the ResNet architecture **ResNet50V2**. The application code defines model builders and loads weights, but this repository does **not** contain the `onion_stacking_meta_classifier_best.keras` file referenced by the stacking option. Ensemble averaging has no separate checkpoint.
 
@@ -93,7 +93,7 @@ git lfs pull
 
 ## Application entry points and setup
 
-- **Windows:** [`SRC/Windows/Src/app.py`](SRC/Windows/Src/app.py) is the Python source. An [Inno Setup definition](SRC/Windows/Application/OnionAIInspection.iss) and the [supplied installer](SRC/Windows/Installer/OnionAIInspectionSetup.exe) are also available. The code imports TensorFlow/Keras, PyQt5, OpenCV, NumPy, Matplotlib, and `pyrealsense2`; a Windows dependency lockfile is not supplied.
+- **Windows:** [`SRC/Windows/Src/app.py`](SRC/Windows/Src/app.py) is the Python source. An [Inno Setup definition](SRC/Windows/Application/OnionAIInspection.iss) and the [supplied installer](https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/OnionAIInspectionSetup.exe) are also available. The code imports TensorFlow/Keras, PyQt5, OpenCV, NumPy, Matplotlib, and `pyrealsense2`; a Windows dependency lockfile is not supplied.
 - **Raspberry Pi:** [`SRC/Raspi/final.py`](SRC/Raspi/final.py) is the application source. Start with [`setup.sh`](SRC/Raspi/setup.sh), [`requirements-pi.txt`](SRC/Raspi/requirements-pi.txt), and [`run.sh`](SRC/Raspi/run.sh). The supplied setup script targets a **64-bit Raspberry Pi 5** and installs system packages as well as Python dependencies. Review the script before running it on your device.
 
 **Fresh-clone limitation:** The Windows source looks for model weights under a root-level `Training_DL_Models/Model_*/weights/` tree, whereas the supplied files are organized under `SRC/Models/`. The Raspberry Pi source also expects a separate `Weight Files/` directory beside `final.py`. Those paths must be reconciled for source execution. Both application sources reference a stacking checkpoint and external reflectance/reference assets that are absent from the supplied folder. Git LFS restores the supplied large files, but does not create those missing assets. The installer was uploaded as provided and has not been independently tested on a clean machine.
@@ -108,7 +108,7 @@ RealSense sizing depends on calibration and scene geometry; model results depend
 
 - [Onion AI Inspection System project report](Documentation/Onion_AI_Inspection_System_Project_Report.docx)
 - [CepaMetric project presentation](Documentation/CepaMetric_GitHub_Project_15_Slides.pptx)
-- [Demonstration video](Documentation/Video.mp4)
+- [Demonstration video](https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/Video.mp4)
 - [Project screenshots](Screenshots/)
 
 No project-level license was included in the supplied folder. Verify rights to the source, dataset, weights, report, and installer before reuse or redistribution.
