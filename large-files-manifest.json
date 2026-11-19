@@ -1,0 +1,69 @@
+{
+  "files": [
+    {
+      "path": "Documentation/Video.mp4",
+      "size": 226266846,
+      "sha256": "bf1f74e0e174a252dbc00d247408fc5b85b11a7e5fc864c88a27502e55548cbd",
+      "parts": [
+        {
+          "url": "https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/Video.mp4",
+          "size": 226266846,
+          "sha256": "bf1f74e0e174a252dbc00d247408fc5b85b11a7e5fc864c88a27502e55548cbd",
+          "name": "Video.mp4"
+        }
+      ]
+    },
+    {
+      "path": "SRC/Models/Exception/xception_model.weights.h5",
+      "size": 256285732,
+      "sha256": "ee1eb41b83b95797fee173f333104fd6a66a6ba0aa155db561adc2aabd73c2c5",
+      "parts": [
+        {
+          "url": "https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/xception_model.weights.h5",
+          "size": 256285732,
+          "sha256": "ee1eb41b83b95797fee173f333104fd6a66a6ba0aa155db561adc2aabd73c2c5",
+          "name": "xception_model.weights.h5"
+        }
+      ]
+    },
+    {
+      "path": "SRC/Models/Resnet/resnet_model.weights.h5",
+      "size": 289003476,
+      "sha256": "268a326e088a13ee41a6ee313cf279872e6e551b91a00eb914cdafc1c303ec6e",
+      "parts": [
+        {
+          "url": "https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/resnet_model.weights.h5",
+          "size": 289003476,
+          "sha256": "268a326e088a13ee41a6ee313cf279872e6e551b91a00eb914cdafc1c303ec6e",
+          "name": "resnet_model.weights.h5"
+        }
+      ]
+    },
+    {
+      "path": "SRC/Models/convnexttiny/convnexttiny_model.weights (1).h5",
+      "size": 336782604,
+      "sha256": "34dc0bb70fd24ca1b8824527ee10300fc06b40abce5d5c0467ca302c5698cebf",
+      "parts": [
+        {
+          "url": "https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/convnexttiny_model.weights.1.h5",
+          "size": 336782604,
+          "sha256": "34dc0bb70fd24ca1b8824527ee10300fc06b40abce5d5c0467ca302c5698cebf",
+          "name": "convnexttiny_model.weights (1).h5"
+        }
+      ]
+    },
+    {
+      "path": "SRC/Windows/Installer/OnionAIInspectionSetup.exe",
+      "size": 1282770959,
+      "sha256": "02149178b024d425c5cf689e0a79f930db588f0bd3de869003d5aed1603e166a",
+      "parts": [
+        {
+          "url": "https://github.com/ArviZuko/CepaMetric-Onion-Quality-Assessment/releases/download/large-files-no-lfs/OnionAIInspectionSetup.exe",
+          "size": 1282770959,
+          "sha256": "02149178b024d425c5cf689e0a79f930db588f0bd3de869003d5aed1603e166a",
+          "name": "OnionAIInspectionSetup.exe"
+        }
+      ]
+    }
+  ]
+}
