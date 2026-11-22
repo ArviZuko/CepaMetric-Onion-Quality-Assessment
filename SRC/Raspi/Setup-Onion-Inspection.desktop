@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Setup Onion AI Inspection
+Comment=Install the Raspberry Pi libraries for the inspection application
+Exec=bash -c 'F="%k"; F="${F#file://}"; D="$(dirname "$F")"; exec bash "$D/setup.sh"'
+Path=
+Terminal=true
+Categories=Utility;
+StartupNotify=true
